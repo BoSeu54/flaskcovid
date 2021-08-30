@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Covid 19</title>
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous">
+        <link rel="icon"
+            href="https://icons-for-free.com/iconfiles/png/512/colored_icons-vaccine-131994891148529251.png">
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+            integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+            crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+        <style>
+        table,
+        th,
+        td {
+            border: 2.0px outset rgba(241, 9, 9, 0.658);
+            border-collapse:separate;
+        }
+        
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 90px 0 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            z-index: 99;
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                top: 11.5rem;
+                padding: 0;
+            }
+        }
+
+        .navbar {
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
+        }
+
+        @media (min-width: 767.98px) {
+            .navbar {
+                top: 0;
+                position: sticky;
+                z-index: 999;
+            }
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+        }
+
+        .sidebar .nav-link.active {
+            color: #0d6efd;
+        }
+    </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-dark bg-primary p-2">
+            <a class="nav-link active" aria-current="page"
+                href="http://127.0.0.1:5000"
+                style="font-size: 20px; color: antiquewhite"> <b> THAILAND</b></a>
+            <div class="col-12 col-md-4 col-lg-2"> </div>
+            <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center
+                justify-content-md-end mt-3 mt-md-0">
+
+                <div class="dropdown">
+                    <button class="bg" type="button">
+                        <a class="nav-link active" aria-current="page"
+                            href="http://127.0.0.1:5000"> <b>CORONA VIRUS
+                                2019</b></a>
+                    </button>
+
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light
+                    sidebar collapse">
+                    <div class="position-sticky">
+                        <ul class="nav flex-column">
+						
+                            <div class="dropdown">
+                                <center>
+                                    <img src="https://www.kaohoon.com/wp-content/uploads/2021/05/COVID19.jpeg" width="250px" height="100px">
+                                </center>
+                            </div>
+                            
+                        <div class="dropdown"><center><br>
+                            <button type="button"  style="background-color:antiquewhite">
+                                <a class="nav-link active" aria-current="page"
+                                href="http://127.0.0.1:5000">
+                                <span class="ml-2"> สถานการณ์ COVID-19 ในประเทศไทย</span>
+                            </a>
+                            </button></center>
+                        </div>
+
+                        <div class="dropdown"><center><br>
+                            <button type="button"  style="background-color:antiquewhite">
+                                <a class="nav-link active" aria-current="page"
+                                href="http://127.0.0.1:5000/province">
+                                <span class="ml-3"> COVID-19 แยกตามรายจังหวัด</span>
+                            </a>
+                            </button></center>
+                        </div>
+                        
+                        <div class="dropdown"><center><br>
+                            <button type="button"  style="background-color:antiquewhite">
+                                <a class="nav-link active" aria-current="page"
+                                href="http://127.0.0.1:5000/ripple3">
+                                <span class="ml-3">COVID-19 ระลอก3(01/04/2021 – ปัจจุบัน)</span>
+                            </a>
+                            </button></center>
+                        </div>
+
+                        <div class="dropdown"><center><br>
+                            <button type="button"  style="background-color:antiquewhite">
+                                <a class="nav-link active" aria-current="page"
+                                href="http://127.0.0.1:5000/ripple1-2">
+                                <span class="ml-3"> COVID-19 ระลอก1-2 (12/01/2020 – 31/03/2021)</span>
+                            </a>
+                            </button></center>
+                        </div>
+                        
+                        <div class="dropdown"><center><br>
+                            <button type="button"  style="background-color:antiquewhite">
+                                <a class="nav-link active" aria-current="page"
+                                href="http://127.0.0.1:5000/world.countries">
+                                <span class="ml-3"> สถานการณ์ COVID-19 ทุกประเทศ</span>
+                            </a>
+                            </button></center>
+                        </div>
+                        </ul>
+                    </div>
+                </nav>
+                <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+                    <blockquote>
+                        <h1 class="h2" align="center" style="font-size:30px;
+                            color: saddlebrown;
+                            font-family:Baskerville, 'Palatino Linotype',
+                            Palatino, 'Century Schoolbook L', 'Times New Roman',
+                            'serif'"><strong>สถาณการณ์ COVID-19 ระลอก3(01/04/2021 – ปัจจุบัน)</strong></h1>
+                    </blockquote>
+                    <div align="center">
+                        <table width="800">
+                            <tr style="font-size:20px" align="center">
+                                <th width="100" height="40"
+                                    style="background-color:antiquewhite;">ประจำวันที่</th>
+                                <th width="100" height="40"
+                                    style="background-color:#4aff68;">ติดเชื้อเพิ่มวันนี้</th>
+                                <th width="100" height="40"
+                                    style="background-color:#ff8383;">ติดเชื้อสะสม</th>
+                                <th width="100" height="40"
+                                    style="background-color:#f895e8;">ติดเชื้อจากภายในประเทศ</th>
+                                <th width="100" height="40"
+                                    style="background-color:#72b5f5;">ติดเชื้อจากภายในประเทศสะสม</th>
+                            </tr>
+                            {%for i in result2 %}
+                            <tr style="font-size:18px" align="center">
+                                <td width="100" height="35"
+                                    style="background-color:lemonchiffon">{{i['txn_date']}}</td>
+                                <td width="100" height="35"
+                                    style="background-color:#86ff9ab2">{{i['new_case']}} คน</td>
+                                <td width="100" height="35"
+                                    style="background-color:#fda2a2d8">{{i['total_case']}} คน</td>
+                                <td width="100" height="35"
+                                    style="background-color:#fab5eecc">{{i['new_case_excludeabroad']}} คน</td>
+                                <td width="100" height="35"
+                                    style="background-color:#aff6ffcc">{{i['total_case_excludeabroad']}} คน</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+            integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+        <!-- Github buttons -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </body>
+
+</html>

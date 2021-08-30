@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid 19</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="icon" href="https://icons-for-free.com/iconfiles/png/512/colored_icons-vaccine-131994891148529251.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 90px 0 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            z-index: 99;
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                top: 11.5rem;
+                padding: 0;
+            }
+        }
+
+        .navbar {
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
+        }
+
+        @media (min-width: 767.98px) {
+            .navbar {
+                top: 0;
+                position: sticky;
+                z-index: 999;
+            }
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+        }
+
+        .sidebar .nav-link.active {
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary p-2">
+        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000"
+            style="font-size: 20px; color: antiquewhite"> <b> THAILAND</b></a>
+        <div class="col-12 col-md-4 col-lg-2"> </div>
+        <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center
+                justify-content-md-end mt-3 mt-md-0">
+
+            <div class="dropdown">
+                <button class="bg" type="button">
+
+                    <a> <b>CORONA VIRUS 2019</b></a>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light
+                    sidebar collapse">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+						
+						<div class="dropdown">
+                            <center>
+                                <img src="https://www.kaohoon.com/wp-content/uploads/2021/05/COVID19.jpeg" width="250px" height="100px">
+                            </center>
+                        </div>
+						
+                        <div class="dropdown">
+                            <center><br>
+                                <button type="button" style="background-color:antiquewhite">
+                                    <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000">
+                                        <span class="ml-2"> สถานการณ์
+                                            COVID-19 ในประเทศไทย</span>
+                                    </a>
+                                </button>
+                            </center>
+                        </div>
+
+                        <div class="dropdown">
+                            <center><br>
+                                <button type="button" style="background-color:antiquewhite">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="http://127.0.0.1:5000/province">
+                                        <span class="ml-3"> COVID-19
+                                            แยกตามรายจังหวัด</span>
+                                    </a>
+                                </button>
+                            </center>
+                        </div>
+
+                        <div class="dropdown">
+                            <center><br>
+                                <button type="button" style="background-color:antiquewhite">
+                                    <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/ripple3">
+                                        <span class="ml-3">COVID-19
+                                            ระลอก3(01/04/2021 – ปัจจุบัน)</span>
+                                    </a>
+                                </button>
+                            </center>
+                        </div>
+
+                        <div class="dropdown">
+                            <center><br>
+                                <button type="button" style="background-color:antiquewhite">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="http://127.0.0.1:5000/ripple1-2">
+                                        <span class="ml-3"> COVID-19
+                                            ระลอก1-2 (12/01/2020 –
+                                            31/03/2021)</span>
+                                    </a>
+                                </button>
+                            </center>
+                        </div>
+                        <div class="dropdown">
+                            <center><br>
+                                <button type="button" style="background-color:antiquewhite">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="http://127.0.0.1:5000/world.countries">
+                                        <span class="ml-3"> สถานการณ์
+                                            COVID-19 ทุกประเทศ</span>
+                                    </a>
+                                </button>
+                            </center>
+                        </div>
+
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+                <blockquote>
+                    <h1 class="h2" align="center" style="font-size:30px;
+                            color: saddlebrown"><strong>สถาณการณ์ Covid19
+                            ในประเทศไทย</strong></h1>
+                </blockquote>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header" align="center" style="background-color: antiquewhite">
+                                <b>ประจำวันที&nbsp;</b>
+                            </h5>
+                            <div class="card-body" align="center" style="font-size: 1.8em; background-color:
+                                    lemonchiffon">
+                                <img src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/256/calendar-icon.png"
+                                    width="80px" height="60px">
+                                <center><b>{{result['UpdateDate']}}</b></center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header" align="center" style="background-color:#E18204;color:
+                                    aliceblue"><b>ติดเชื้อเพิ่มวันนี้&nbsp;</b></h5>
+                            <div class="card-body" align="center" style="font-size: 1.8em;
+                                    background-color:#FEB228; color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'">
+                                <img src="https://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/256/red-document-plus-icon.png"
+                                    width="80px" height="60px">
+                                <center><b>{{result['todayCases']}}
+                                        คน</b></center>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header" align="center" style="background-color:#B22319;color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'"><b>ติดเชื้อสะสม&nbsp;</b></h5>
+                            <div class="card-body" align="center" style="font-size: 1.8em;
+                                    background-color:#E03020; color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'">
+                                <img src="https://icons.iconarchive.com/icons/double-j-design/origami-colored-pencil/256/red-disk-icon.png"
+                                    width="80px" height="60px">
+                                <center><b>{{result['cases']}}
+                                        คน</b></center>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header" align="center" style="background-color:#7E3FFF;color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'"><b>กำลังรักษา&nbsp;</b></h5>
+                            <div class="card-body" align="center" style="font-size: 1.8em;
+                                    background-color:#a99de7; color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'">
+                                <img src="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/256/42491-hospital-icon.png"
+                                    width="80px" height="60px">
+                                <center><b>{{result['active']}}
+                                        คน</b></center>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header" align="center" style="background-color:#B4C540;color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'"><b>หายป่วยวันนี้&nbsp;</b></h5>
+                            <div class="card-body" align="center" style="font-size: 1.8em;
+                                    background-color:#389A08;color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'">
+                                <img src="https://icons.iconarchive.com/icons/everaldo/crystal-clear/128/Filesystem-folder-home-2-icon.png"
+                                    width="80px" height="60px">
+                                <center><b>{{result['todayRecovered']}}
+                                        คน</b></center>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header" align="center" style="background-color:#21B1A8;color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'"><b>หายป่วยสะสม&nbsp;</b></h5>
+                            <div class="card-body" align="center" style="font-size: 1.8em;
+                                    background-color:#8DC6BF;color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'">
+                                <img src="https://icons.iconarchive.com/icons/everaldo/crystal-clear/128/Action-db-add-icon.png"
+                                    width="80px" height="60px">
+                                <center><b>{{result['recovered']}}
+                                        คน</b></center>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header" align="center" style="background-color:#560C06;color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'"><b>เสียชีวิตเพิ่ม&nbsp;</b></h5>
+                            <div class="card-body" align="center" style="font-size: 1.8em;
+                                    background-color:#84180E;color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'">
+                                <img src="https://icons.iconarchive.com/icons/designbolts/cute-social/128/Google-Plus-One-icon.png"
+                                    width="80px" height="60px">
+                                <center><b>{{result['todayDeaths']}}
+                                        คน</b></center>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header" align="center" style="background-color:#51514D;color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'"><b>เสียชีวิตสะสม&nbsp;</b></h5>
+                            <div class="card-body" align="center" style="font-size: 1.8em;
+                                    background-color:#989898; color:
+                                    aliceblue;font-family:Baskerville, 'Palatino
+                                    Linotype', Palatino, 'Century Schoolbook L',
+                                    'Times New Roman', 'serif'">
+                                <img src="https://icons.iconarchive.com/icons/fasticon/database/128/table-add-icon.png"
+                                    width="80px" height="60px">
+                                <center><b>{{result['deaths']}}
+                                        คน</b></center>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+
+                <div class="container">
+                    <script src="src/jquery.ntkPieChart.js">
+                        var piechart = $('#piechart').ntkPieChart({
+                            data: [2, 5, 6],
+                            fontFamily: "Verdana,sans-serif",
+                            fontColor: "#FFFFFF",
+                        });
+                    </script>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>
